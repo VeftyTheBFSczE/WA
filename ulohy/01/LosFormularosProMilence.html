@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fancy Form</title>
+    <style>
+        :root {
+            --light-background-image: url('');
+            --dark-background-image: url('https://i.ytimg.com/vi/fEPn6uULvow/hq720.jpg');
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #fffcfc;
+            color: #ffffff;
+            background-image: var(--dark-background-image);
+            background-size: cover;
+            transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+        }
+
+        /* Style the labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Style the text inputs */
+        input[type="text"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="file"],
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style the dark mode switch label */
+        label[for="dark-mode-switch"] {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style the dark mode switch */
+        #dark-mode-switch {
+            appearance: none;
+            width: 30px;
+            height: 15px;
+            border-radius: 15px;
+            background-color: #ccc;
+            position: relative;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #dark-mode-switch:checked {
+            background-color: #007BFF;
+        }
+
+        #dark-mode-switch::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s;
+        }
+
+        #dark-mode-switch:checked::before {
+            transform: translateX(15px);
+        }
+
+        /* Style the security number input */
+        input#parametr2 {
+            padding: 12px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        /* Style the personal problems textarea */
+        textarea#parametr3 {
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Fancy Form</h2>
+
+    <label for="dark-mode-switch">Dark Mode:</label>
+    <input type="checkbox" id="dark-mode-switch">
+    <br><br>
+
+    <form action="http://jecna.lmsoft.cz/form.php" method="post" enctype="multipart/form-data">
+        <label for="jmeno">Name:</label><br>
+        <input type="text" id="jmeno" name="jmeno" placeholder="John Doe" required><br>
+
+        <label for="prijmeni">Last Name:</label><br>
+        <input type="text" id="prijmeni" name="prijmeni" placeholder="Smith" required><br>
+
+        <label for="foto">Photo:</label><br>
+        <input type="file" id="foto" name="foto" accept="image/*"><br>
+
+        <label for="datum_narozeni">Date of Birth:</label><br>
+        <input type="date" id="datum_narozeni" name="datum_narozeni" required><br>
+
+        <label for="telefon">Phone Number (nine digits):</label><br>
+        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{9}" placeholder="123456789"><br>
+
+        <label for="parametr1">Choose your gender</label><br>
+        <select id="parametr1" name="parametr1">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="non-binary">Non-binary</option>
+            <option value="genderqueer">Genderqueer</option>
+            <option value="genderfluid">Genderfluid</option>
+            <option value="agender">Agender</option>
+            <option value="bigender">Bigender</option>
+            <option value="androgynous">Androgynous</option>
+            <option value="two-spirit">Two-Spirit</option>
+            <option value="transgender">Transgender</option>
+            <option value="cisgender">Cisgender</option>
+            <option value="demiboy">Demiboy</option>
+            <option value="demigirl">Demigirl</option>
+            <option value="intersex">Intersex</option>
+            <option value="pangender">Pangender</option>
+            <option value="neutrois">Neutrois</option>
+            <option value="gender-questioning">Gender Questioning</option>
+            <option value="gender-nonconforming">Gender Nonconforming</option>
+            <option value="third gender">Third Gender</option>
+            <option value="walmart-bag">Walmart bag</option>
+        </select>
+
+        <label for="parametr2">Enter your security number</label><br>
+        <input type="number" id="parametr2" name="parametr2" placeholder="420" required><br>
+
+        <label for="parametr3">Enter your personal problems (Be aware that I don't care)</label><br>
+        <textarea id="parametr3" name="parametr3" rows="4" cols="50" placeholder="Speak, please" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const darkModeSwitch = document.getElementById("dark-mode-switch");
+        const body = document.body;
+
+        if (localStorage.getItem("darkMode") === "enabled") {
+            enableDarkMode();
+        }
+
+        darkModeSwitch.addEventListener("change", () => {
+            if (darkModeSwitch.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
+
+        function enableDarkMode() {
+            body.classList.add("dark-mode");
+            localStorage.setItem("darkMode", "enabled");
+        }
+
+        function disableDarkMode() {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("darkMode", "disabled");
+        }
+    </script>
+</body>
+
+</html>

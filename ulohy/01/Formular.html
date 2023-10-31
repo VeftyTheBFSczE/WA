@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h2>Form for cool kids</h2>
+
+        <form action="http://jecna.lmsoft.cz/form.php" method="post" enctype="multipart/form-data">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type text" id="lname" name="lname"><br>
+            <label for="born">What year you were born?</label><br>
+            <input type="text" id="born" name="born"><br><br>
+
+            <p>Choose your least favorite</p>
+
+            <input type="radio" id="java" name="fav_language" value="java">
+            <label for="java">Java</label><br>
+            <input type="radio" id="C#" name="fav_language" value="C#">
+            <label for="c#">C#</label><br>
+            <input type="radio" id="python" name="fav_language" value="python">
+            <label for="python">Python</label>
+
+            <p>Choose your mental illness (more options are permitted)</p>
+            <input type="checkbox" id="mental1" name="mental1" value="depression">
+            <label for="mental1"> I am depressed</label><br>
+            <input type="checkbox" id="mental2" name="mental2" value="schizophrenia">
+            <label for="mental2"> I am schizophrenic</label><br>
+            <input type="checkbox" id="mental3" name="mental3" value="anxiety">
+            <label for="mental3"> I am anxious </label><br><br>
+
+            <label for="file">Please show us your credit card info both the front and the back:</label><br>
+            <input type="file" id="file" name="file" required>
+            <input type="submit" value="Upload"> <br>
+            <label for="feedback">Please enter your feedback:</label><br>
+            <input type="text" id="feedback" name="feedback" size="50" maxlength="500"><br>
+            <label for="puzzle">Solve the puzzle: 0÷0=</label>
+            <input type="text" id="puzzle" name="puzzle" required>
+        
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
