@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Layout Adjustment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #3F51B5;
+            color: white;
+            padding: 1em;
+            font-size: 2em;
+        }
+
+        .navigation {
+            background-color: #2196F3;
+            color: white;
+            padding: 0.5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .navigation input[type="search"] {
+            padding: 0.5em;
+            margin-right: -60em;
+            border-radius: 5px;
+            border: none;
+            flex-grow: 0;
+        }
+
+        .search-icon {
+            background-color: white;
+            border: none;
+            padding: 0.5em;
+            margin-left: 1em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px; 
+            padding: 10px;
+            margin-bottom: 120px;
+            
+        }
+
+        .box {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        .yellow-box { background-color: #FFEB3B; color: black; width: 40px; 
+            margin-left: -1em;
+        
+        }
+        .orange-box { background-color: #FF9800; width: 70px; }
+        .red-box { background-color: #F44336; grid-column: span 2; width: 200px; }
+        
+        .sidebar {
+            background-color: #009688;
+            padding: 1em;
+            position: fixed;
+            top: 200px; 
+            right: 0;
+            bottom: 200px;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #9C27B0;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            gap: 10px;
+        }
+
+        .footer .box { background-color: #7f2d8f; flex: 1; }
+
+        @media screen and (max-width: 768px) {
+            .main-content { grid-template-columns: repeat(2, 1fr); }
+            .red-box { grid-column: span 2; }
+            .sidebar { position: static; width: auto; }
+            .footer { position: static; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-content { grid-template-columns: 1fr; }
+            .red-box { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Logo</div>
+    <div class="navigation">
+        <span>Navigace</span>
+        <input type="search" placeholder="Search...">
+        <button class="search-icon">&#128269;</button>
+    </div>
+    <div class="main-content">
+        <div class="box yellow-box">Box 1</div>
+        <div class="box yellow-box">Box 2</div>
+        <div class="box yellow-box">Box 3</div>
+        <div class="box yellow-box">Box 4</div>
+        <div class="box orange-box">Box 1</div>
+        <div class="box orange-box">Box 2</div>
+        <div class="box orange-box">Box 3</div>
+        <div class="box red-box">Box 1</div>
+        <div class="box red-box">Box 2</div>
+    </div>
+    <div class="sidebar">Sidebar</div>
+    <div class="footer">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+</html>
