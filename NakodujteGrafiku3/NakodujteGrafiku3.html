@@ -10,7 +10,7 @@ body{
 }
 
     .topnav {
-            background-color: rgb(82, 82, 248);
+            background-color: #0071BD;
             overflow: hidden;
         }
 
@@ -125,19 +125,12 @@ body{
         }
 
         .three {
-            background: rgb(255, 0, 0);
+            background:#C2272D;
             flex: 2 1 auto;
             height: 150px;
             margin: 5px;
             display: flex;
             justify-content: center;
-        }
-
-        .four {
-            background: rgb(40, 53, 40);
-            flex: 1 1 auto;
-            height: 400px;
-
         }
 
         .five {
@@ -181,8 +174,36 @@ body{
             padding: 10px;
             text-align: center;
         }
+        .item1{
+            display: none;
+        }
+.item2{
+    display: none;
+}
+.item3{
+    display: none;
+}
 
-        @media only screen and (max-width:800px) {
+.item4{
+   display: none;
+}
+.item5{
+    display: none;
+}
+.item6{
+    display: none;
+}
+.item7{
+    display: none;
+}
+.item8{
+    display: none;
+}
+.item9 {
+    display: none;
+}
+
+@media only screen and (max-width:800px) {
   /* For tablets: */
  
   .two, .one{
@@ -193,6 +214,10 @@ body{
   }
   .onee{
     display: flex;
+  }
+
+  .oneee{
+    display:none;
   }
   .twoo{
     display: flex;
@@ -213,6 +238,8 @@ body{
         display: flex;
        
     }
+
+   
     .containerrr{
         width: 80%;
     }
@@ -251,80 +278,99 @@ body{
   .flex-container {
 
 display:  flex;
-  
-
 flex-direction: column;  
-
 background-color: #ffffff;
-height: 100%;
 padding: 15px;
-gap: 5px;
+gap: 15px;
 
 }
-
 .flex-container > div{
-background: #31944a;
-
-
-padding: 80px;
+    
+    text-align: center;
+    width: 180px;
+    height: auto;
+    background: #FBB03B;
+    padding: 40px 35px 40px 20px;
+}
+.container{
+    display: none;
 }
 
+.topnav>p { 
+    font-size: 30px;
+}
+div>.five{
+    background-color: #0071BD;
+    align-self: start;
+}
 
-.item1 { 
-
+div>.item1 { 
+   display: block;
 align-self:flex-start;
+
 }
         
-.item2 { 
-
+div>.item2 { 
+    display: block;
 flex-grow:0;
 align-self:flex-start;
 }
         
-.item3 { 
-
+div>.item3 { 
+    display: block;
 align-self:flex-start;
 }
         
-.item4 { 
-
+div>.item4 { 
+    display: block;
 align-self:flex-start;
 }
         
-.item5 { 
-
+div>.item5 { 
+    display: block;
+  background-color: #F15A25;
 align-self:flex-start;
 }
         
-.item6 { 
-
+div>.item6 { 
+    display: block;
+    background-color: #F15A25;
 align-self:flex-start;
 }
         
-.item7 { 
-
+div>.item7 { 
+    display: block;
+    background-color: #F15A25;
 align-self:flex-start;
 }
         
-.item8 { 
-
+div>.item8 { 
+    display: block;
+background-color: #C2272D;
 align-self:flex-start;
 }
         
-.item9 { 
-
+div>.item9 { 
+    display: block;
+    background-color: #C2272D;
 align-self:flex-start;
 }
-        
-.item10 { 
-
-align-self:flex-start;
+.containerrr{
+    width: 80px;
 }
         
-.item11 { 
-
+div>.item10 { 
+background-color: #01A89E;
 align-self:flex-start;
-padding: 40px;
+
+
+
+}
+        
+div>.item11 { 
+    padding: 40px 35px 40px 20px;
+align-self:flex-start;
+
 }
 
   
@@ -340,7 +386,13 @@ padding: 40px;
     }
 
     .seven {
-        display: none;
+        display: flex;
+        background: #B296C7;
+            flex: 1 1 auto;
+            height: 75px;
+            
+            justify-content: center;
+            margin: 0px 5px 5px 5px;
     }
 
 }
@@ -371,7 +423,7 @@ padding: 40px;
                             <div class="one">Box2</div>
                             <div class="one">Box3</div>
                             <div class="one">Box4</div>
-                            <div class="onee">Box 1</div>
+                            <div class="oneee">Box 1</div>
                             
                             <div class="twoo">Box1</div>
                             <div class="twoo">Box 1</div>
@@ -379,7 +431,7 @@ padding: 40px;
                         </div>
                         <div class="box">
                             <div class="two">Box1</div>
-                            <div class="onee">Box 1</div>
+                            <div class="oneee">Box 1</div>
                             <div class="two">Box2</div>
                             <div class="two">Box3</div>
                             <div class="twoo">Box1</div>
@@ -388,8 +440,8 @@ padding: 40px;
            
                         </div>
                         <div class="box">
-                            <div class="three">Box 3</div>
-                            <div class="onee">Box 1</div>
+                            
+                            <div class="oneee">Box 1</div>
                             <div class="three">Box 2</div>
                             <div class="three">Box 2</div>
                         </div>
